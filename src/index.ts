@@ -1,1 +1,7 @@
-console.log('hello from nodejs setup with typescript, eslint, prettier and +!!')
+class Person {
+    sayMyName() {
+        return "Stylish"
+    }
+}
+
+export default Person
