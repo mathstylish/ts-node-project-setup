@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc && tsc-alias",
-    "start": "node dist/index.js",
-    "start:dev": "nodemon --exec 'ts-node -r tsconfig-paths/register src/index.ts' -e ts",
+    "start": "dotenv -c production -- node dist/index.js",
+    "start:dev": "dotenv -c development -- nodemon --exec 'ts-node -r tsconfig-paths/register src/index.ts' -e ts",
     "husky:prepare": "husky",
     "test": "jest --passWithNoTests",
     "test:watch": "npm test -- --watch",
@@ -33,6 +33,7 @@
     "@types/node": "^20.11.25",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
+    "envalid": "^8.0.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "git-commit-msg-linter": "^5.0.7",
@@ -46,5 +47,8 @@
     "tsc-alias": "^1.8.8",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "dotenv-cli": "^7.4.1"
   }
 }
