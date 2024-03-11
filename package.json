@@ -7,8 +7,21 @@
     "start:dev": "nodemon --exec 'ts-node src/index.ts' -e ts",
     "husky:prepare": "husky",
     "test": "jest --passWithNoTests",
-    "test:watch": "npm test --watch",
-    "test:staged": "npm test --findRelatedTests"
+    "test:watch": "npm test -- --watch",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:push": "npm run test -- --coverage"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ]
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint 'src/**' --fix",
+      "prettier --check 'src/**'",
+      "npm run test:staged"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -28,17 +41,5 @@
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.2"
-  },
-  "nodemonConfig": {
-    "watch": [
-      "src"
-    ]
-  },
-  "lint-staged": {
-    "*.ts": [
-      "eslint 'src/**' --fix",
-      "prettier --check 'src/**'",
-      "npm run test:staged"
-    ]
   }
 }
