@@ -10,11 +10,15 @@ module.exports = {
     // The directory where Jest should output its coverage files
     coverageDirectory: "coverage",
     // Tell Jest to use a ts-jest preset
-    preset: "ts-test",
+    preset: "ts-jest",
     // The test environment that will be used for testing
     testEnvironment: "jest-environment-node",
     // A map from regular expressions to paths to transformers
     transform: {
         ".+\\.ts$": "ts-jest",
     },
+    // Makes jest find imported files using path mapping alias
+    moduleNameMapper: {
+        "@/(.*)": "<rootDir>/src/$1"
+    }
 }

@@ -1,4 +1,4 @@
-import Person from "."
+import Person from "@/models/person"
 
 it("should display correct name", () => {
     const person = new Person()

@@ -1,7 +1,1 @@
-class Person {
-    sayMyName() {
-        return "Stylish"
-    }
-}
-
-export default Person
+console.log("hello from nodejs and typescript project boilerplate")
